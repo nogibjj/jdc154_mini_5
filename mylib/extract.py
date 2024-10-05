@@ -10,7 +10,7 @@ import pandas as pd
 
 
 def extract(
-    url="https://raw.githubusercontent.com/fivethirtyeight/data/refs/heads/master/nfl-wide-receivers/advanced-historical.csv",
+    url="https://github.com/fivethirtyeight/data/raw/refs/heads/master/nfl-wide-receivers/advanced-historical.csv",
     file_path="data/nfl-wide-receivers.csv",
     directory="data",
 ):

@@ -2,8 +2,8 @@ from mylib.transform_load import load
 
 
 def test_load():
-    l = load()
-    assert l == "nflReceivers.db"
+    database = load()
+    assert database == "nflReceivers.db"
 
 
 if __name__ == "__main__":
