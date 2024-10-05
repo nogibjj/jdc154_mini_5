@@ -1,10 +1,19 @@
-"""Function to add two integers"""
+"""
+ETL-Query script
+"""
 
+from mylib.extract import extract
+from mylib.transform_load import load
+from mylib.query import query
 
-def add(num_1, num_2):
-    """adds two integers"""
-    return num_1 + num_2
+# Extract
+print("Extracting data...")
+extract()
 
+# Transform and load
+print("Transforming data...")
+load()
 
-if __name__ == "__main__":
-    print(add(5, 3))
+# Query
+print("Querying data...")
+query()
