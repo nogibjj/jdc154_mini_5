@@ -24,12 +24,12 @@ def create():
     return "Successful insertion into table"
 
 
-def query():
+def read():
     """Query the database for the top 5 rows table"""
     conn = sqlite3.connect("nflReceivers.db")
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM nflReceivers ORDER BY career_try DESC LIMIT 5")
-    print("Top 5 nflReceivers orderd by career tries:")
+    print("Top 5 nflReceivers orderd by true receiving yards:")
     print(cursor.fetchall())
     conn.close()
     return "Success"
@@ -57,3 +57,31 @@ def delete():
     print(cursor.fetchall())
     conn.close()
     return "Successfully deleted"
+
+
+def query2():
+    """Extra queries"""
+    conn = sqlite3.connect("nflReceivers.db")
+    cursor = conn.cursor()
+    cursor.execute(
+        "SELECT COUNT(*) from nflReceivers WHERE career_ranypa > 0 ORDER BY career_ranypa DESC"
+    )
+    print(
+        "Counting number of receivers whose Adjusted Net Yards Per Attempt (relative to average) of player's career teams, weighted by TRY w/ each team is > 0"
+    )
+    print(cursor.fetchall())
+    conn.close()
+    return "Successful queries"
+
+
+def query3():
+    """Extra queries"""
+    conn = sqlite3.connect("nflReceivers.db")
+    cursor = conn.cursor()
+    cursor.execute(
+        "SELECT player_name, career_try from nflReceivers WHERE career_try > 1500"
+    )
+    print("Players whos career true receiving yards are > 1500")
+    print(cursor.fetchall())
+    conn.close()
+    return "Successful queries"

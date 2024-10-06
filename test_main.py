@@ -1,6 +1,6 @@
 from mylib.extract import extract
 from mylib.transform_load import load
-from mylib.query import query, create, update, delete
+from mylib.query import read, create, update, delete
 import os
 
 
@@ -16,7 +16,7 @@ def test_load():
 
 def test_query():
     created = create()
-    readed = query()
+    readed = read()
     updated = update()
     deleted = delete()
     assert created == "Successful insertion into table"
