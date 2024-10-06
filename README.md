@@ -39,3 +39,6 @@ This project introduced sql commands using a SQLite database stored directly in 
 
 ## CRUD results:
 ![alt text](image.png)
+
+## Database: 
+![alt text](image-4.png)
