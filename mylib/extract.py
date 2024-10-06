@@ -16,8 +16,7 @@ def extract(
 ):
     if not os.path.exists(directory):
         os.makedirs(directory)
-    """ "Extract a url to a file path"""
-    with requests.get(url) as r:
+    with requests.get(url, timeout=10) as r:
         with open(file_path, "wb") as f:
             f.write(r.content)
     df = pd.read_csv(file_path)

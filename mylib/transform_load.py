@@ -13,7 +13,9 @@ def load(dataset="data/nfl-wide-receivers.csv"):
 
     # prints the full working directory and path
     print(os.getcwd())
-    payload = csv.reader(open(dataset, newline=""), delimiter=",")
+    payload = csv.reader(open(dataset, newline="", encoding="UTF-8"), delimiter=",")
+    # skips header row
+    next(payload)
     conn = sqlite3.connect("nflReceivers.db")
     c = conn.cursor()
     c.execute("DROP TABLE IF EXISTS nflReceivers")
